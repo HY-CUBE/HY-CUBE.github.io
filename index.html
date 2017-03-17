@@ -128,7 +128,26 @@
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
-    <script src="/join.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    function joinUs(){
+        var form = $('.student'),
+            student = form.form('get values');
+        $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbzo2qnAbYUir8B3vuzjbVQW5AVWY4OeM1w2DkDqotwYiwm2FZ8k/exec",
+            data: {
+                Name:student.Name,
+                Student_ID:student.ID,
+                Email:student.Email,
+                Phone_Num:student.Phone_Num,
+                Grade:student.Grade
+            },
+            type: "POST",
+            success: function(){      
+              alert("감사합니다.");
+            }
+        });
+    }
+    </script>
     <title>HY-CUBE</title>
   </head>
   <body>
@@ -200,7 +219,7 @@
 
 
                         <div class="form-group ">
-                            <button type="button" class="btn btn-secondary" onclick="joinUS()">제출</button>
+                            <button type="button" class="btn btn-secondary" onclick="joinUS();">제출</button>
                         </div>
                         
                     </form>
