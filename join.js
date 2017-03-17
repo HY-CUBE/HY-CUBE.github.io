@@ -12,5 +12,8 @@ function joinUs(){
             Grade:student.Grade
         },
         type: "POST",
+        success: function(){      
+          alert("감사합니다.");
+        }
     });
 }
